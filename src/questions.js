@@ -96,6 +96,64 @@ export const QUESTIONS = [
       { text: "False", isCorrect: false },
     ],
   },
+  {
+    artist: 'taylor',
+    question: "Which Taylor Swift song is about her relationship with Jake Gyllenhaal?",
+    answers: [
+      { text: "All Too Well", isCorrect: true },
+      { text: "Love Story", isCorrect: false },
+      { text: "Style", isCorrect: false },
+      { text: "Delicate", isCorrect: false },
+    ],
+  },
+  {
+    artist: 'taylor',
+    question: "Which Taylor Swift album is known for its indie-folk sound?",
+    answers: [
+      { text: "folklore", isCorrect: true },
+      { text: "1989", isCorrect: false },
+      { text: "Reputation", isCorrect: false },
+      { text: "Red", isCorrect: false },
+    ],
+  },
+  {
+    artist: 'taylor',
+    question: "True or False: Taylor Swift's lucky number is 13.",
+    answers: [
+      { text: "True", isCorrect: true },
+      { text: "False", isCorrect: false },
+    ],
+  },
+  {
+    artist: 'taylor',
+    question: "Which Taylor Swift song features Brendon Urie?",
+    answers: [
+      { text: "ME!", isCorrect: true },
+      { text: "You Need To Calm Down", isCorrect: false },
+      { text: "Lover", isCorrect: false },
+      { text: "The Man", isCorrect: false },
+    ],
+  },
+  {
+    artist: 'taylor',
+    question: "Finish the lyric: 'I knew you were trouble when you ___ in.'",
+    answers: [
+      { text: "walked", isCorrect: true },
+      { text: "came", isCorrect: false },
+      { text: "called", isCorrect: false },
+      { text: "danced", isCorrect: false },
+    ],
+  },
+  {
+    artist: 'taylor',
+    question: "Which Taylor Swift song is about a scarf?",
+    answers: [
+      { text: "All Too Well", isCorrect: true },
+      { text: "Cardigan", isCorrect: false },
+      { text: "Style", isCorrect: false },
+      { text: "The Archer", isCorrect: false },
+    ],
+  },
 
   // Sabrina Carpenter questions
   {
@@ -192,6 +250,54 @@ export const QUESTIONS = [
     answers: [
       { text: "True", isCorrect: true },
       { text: "False", isCorrect: false },
+    ],
+  },
+  {
+    artist: 'sabrina',
+    question: "Which Sabrina Carpenter album features the song 'Thumbs'?",
+    answers: [
+      { text: "Evolution", isCorrect: true },
+      { text: "Singular: Act I", isCorrect: false },
+      { text: "Singular: Act II", isCorrect: false },
+      { text: "Eyes Wide Open", isCorrect: false },
+    ],
+  },
+  {
+    artist: 'sabrina',
+    question: "Which Sabrina Carpenter song features the lyric 'You got me feeling like a psycho'?",
+    answers: [
+      { text: "Vicious", isCorrect: true },
+      { text: "Feather", isCorrect: false },
+      { text: "Skin", isCorrect: false },
+      { text: "Sue Me", isCorrect: false },
+    ],
+  },
+  {
+    artist: 'sabrina',
+    question: "True or False: Sabrina Carpenter opened for Taylor Swift on the Eras Tour.",
+    answers: [
+      { text: "True", isCorrect: true },
+      { text: "False", isCorrect: false },
+    ],
+  },
+  {
+    artist: 'sabrina',
+    question: "Which Sabrina Carpenter song is about moving on from a breakup?",
+    answers: [
+      { text: "Skin", isCorrect: true },
+      { text: "Sue Me", isCorrect: false },
+      { text: "Thumbs", isCorrect: false },
+      { text: "Nonsense", isCorrect: false },
+    ],
+  },
+  {
+    artist: 'sabrina',
+    question: "Finish the lyric: 'I got a feeling that it's gonna be a ___ night'",
+    answers: [
+      { text: "good", isCorrect: true },
+      { text: "long", isCorrect: false },
+      { text: "crazy", isCorrect: false },
+      { text: "fun", isCorrect: false },
     ],
   },
 ]; 
