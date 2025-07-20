@@ -9,6 +9,9 @@ export default function StartPage() {
         <h1 className="text-5xl md:text-7xl font-extrabold mb-8 text-center bg-gradient-to-r from-pink-400 via-fuchsia-400 via-yellow-400 to-cyan-400 bg-clip-text text-transparent font-['Quicksand'],['Comic Sans MS'],cursive">
           Swift & Carpenter Showdown
         </h1>
+        <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">
+          Who are you ready to slay trivia with today?
+        </h2>
         <div className="flex flex-col gap-6 w-full max-w-md mx-auto">
           <button
             className="py-4 px-8 rounded-2xl border-2 font-bold text-lg transition-all w-full shadow-md bg-gradient-to-r from-pink-100 via-yellow-100 to-fuchsia-100 text-pink-700 hover:from-pink-200 hover:to-fuchsia-200 border-pink-200/60"
