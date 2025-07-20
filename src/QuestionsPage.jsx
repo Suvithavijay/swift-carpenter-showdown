@@ -28,6 +28,16 @@ function getRandomUnique(arr, n) {
   return copy.slice(0, n);
 }
 
+function getQuestionsByMode(mode) {
+  if (mode === 'taylor') {
+    return QUESTIONS.filter(q => q.artist === 'taylor');
+  } else if (mode === 'sabrina') {
+    return QUESTIONS.filter(q => q.artist === 'sabrina');
+  } else {
+    return QUESTIONS;
+  }
+}
+
 const QuestionsPage = () => {
   const { mode } = useParams();
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -43,8 +53,9 @@ const QuestionsPage = () => {
 
   // On mount, select 5 unique random questions for this round
   useEffect(() => {
-    setRoundQuestions(getRandomUnique(QUESTIONS, 5));
-  }, []);
+    const pool = getQuestionsByMode(mode);
+    setRoundQuestions(getRandomUnique(pool, 5));
+  }, [mode]);
 
   // Memoize background image order for the session
   const bgOrder = useMemo(() => {
