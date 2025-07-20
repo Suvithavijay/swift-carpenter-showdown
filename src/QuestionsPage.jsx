@@ -1,12 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useParams } from 'react-router-dom';
-import taylorImg from './assets/taylor.jpg';
-import sabrinaImg from './assets/sabrina.png';
 import { QUESTIONS } from './questions';
+
+const TAYLOR_IMAGES = [
+  "/images/ts/21167-1-taylor-swift-image-thumb.png",
+  "/images/ts/521864.jpg",
+  "/images/ts/70+ Taylor Swift HD Wallpapers - Download at WallpaperBro.jpeg",
+  "/images/ts/taylor-swift-1920x1080.jpg",
+  "/images/ts/taylor-swift-pictures.jpg"
+];
+const SABRINA_IMAGES = [
+  "/images/SC/bs-bst-hp-n1_000.jpg",
+  "/images/SC/bs-bst-hp-n1_001.jpg",
+  "/images/SC/bst-hp-n2-2025_005.jpg",
+  "/images/SC/prada-lipstick-ps_001.jpg",
+  "/images/SC/prada-lipstick-ps_002.jpg"
+];
 
 const TIMER_SECONDS = 15;
 
 const QuestionsPage = () => {
+  const { mode } = useParams();
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [showResult, setShowResult] = useState(false);
@@ -16,6 +30,21 @@ const QuestionsPage = () => {
   const [playerName, setPlayerName] = useState('');
   const [showNamePrompt, setShowNamePrompt] = useState(true);
   const [leaderboard, setLeaderboard] = useState([]);
+
+  // Memoize background image order for the session
+  const bgOrder = useMemo(() => {
+    let arr = [];
+    if (mode === 'taylor') arr = [...TAYLOR_IMAGES];
+    else if (mode === 'sabrina') arr = [...SABRINA_IMAGES];
+    else arr = [...TAYLOR_IMAGES, ...SABRINA_IMAGES];
+    // Shuffle
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }, [mode]);
+  const bgImg = bgOrder[currentQuestion % bgOrder.length];
 
   const currentQuestionData = QUESTIONS[currentQuestion];
 
@@ -149,8 +178,8 @@ const QuestionsPage = () => {
   if (!currentQuestionData) return null;
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center font-['Quicksand'],['Comic Sans MS'],cursive">
-      <div className="bg-white p-8 rounded-lg shadow-xl max-w-md w-full">
+    <div className="min-h-screen flex items-center justify-center font-['Quicksand'],['Comic Sans MS'],cursive" style={{ backgroundImage: `url('${bgImg}')`, backgroundSize: 'cover', backgroundPosition: 'center', border: '5px solid red' }}>
+      <div className="p-8 rounded-lg shadow-xl max-w-md w-full" style={{ background: 'rgba(255,255,255,0.6)' }}>
         <div className="flex justify-between items-center mb-4">
           <span className="text-lg font-bold">Question {currentQuestion + 1} / {QUESTIONS.length}</span>
           <span className="text-lg font-bold text-blue-600">Score: {score}</span>
