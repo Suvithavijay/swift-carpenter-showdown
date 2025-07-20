@@ -154,6 +154,110 @@ export const QUESTIONS = [
       { text: "The Archer", isCorrect: false },
     ],
   },
+  {
+    artist: 'taylor',
+    question: "Finish the lyric: 'You can't spell awesome without ___'",
+    answers: [
+      { text: "me", isCorrect: true },
+      { text: "us", isCorrect: false },
+      { text: "love", isCorrect: false },
+      { text: "fun", isCorrect: false },
+    ],
+  },
+  {
+    artist: 'taylor',
+    question: "Which Taylor Swift song features the lyric 'Romeo, take me somewhere we can be alone'?",
+    answers: [
+      { text: "Love Story", isCorrect: true },
+      { text: "You Belong With Me", isCorrect: false },
+      { text: "Enchanted", isCorrect: false },
+      { text: "Fifteen", isCorrect: false },
+    ],
+  },
+  {
+    artist: 'taylor',
+    question: "True or False: Taylor Swift's first album was self-titled.",
+    answers: [
+      { text: "True", isCorrect: true },
+      { text: "False", isCorrect: false },
+    ],
+  },
+  {
+    artist: 'taylor',
+    question: "Which Taylor Swift song is about a getaway car?",
+    answers: [
+      { text: "Getaway Car", isCorrect: true },
+      { text: "Style", isCorrect: false },
+      { text: "Delicate", isCorrect: false },
+      { text: "Wildest Dreams", isCorrect: false },
+    ],
+  },
+  {
+    artist: 'taylor',
+    question: "Finish the lyric: 'I don't know about you, but I'm feeling ___'",
+    answers: [
+      { text: "22", isCorrect: true },
+      { text: "23", isCorrect: false },
+      { text: "18", isCorrect: false },
+      { text: "32", isCorrect: false },
+    ],
+  },
+  {
+    artist: 'taylor',
+    question: "Which Taylor Swift album features the song 'Cardigan'?",
+    answers: [
+      { text: "folklore", isCorrect: true },
+      { text: "evermore", isCorrect: false },
+      { text: "1989", isCorrect: false },
+      { text: "Red", isCorrect: false },
+    ],
+  },
+  {
+    artist: 'taylor',
+    question: "True or False: Taylor Swift has won 3 Album of the Year Grammys.",
+    answers: [
+      { text: "True", isCorrect: true },
+      { text: "False", isCorrect: false },
+    ],
+  },
+  {
+    artist: 'taylor',
+    question: "Which Taylor Swift song features the lyric 'You call me up again just to break me like a promise'?",
+    answers: [
+      { text: "All Too Well", isCorrect: true },
+      { text: "Back to December", isCorrect: false },
+      { text: "The Archer", isCorrect: false },
+      { text: "Lover", isCorrect: false },
+    ],
+  },
+  {
+    artist: 'taylor',
+    question: "Finish the lyric: 'Band-aids don't fix ___'",
+    answers: [
+      { text: "bullet holes", isCorrect: true },
+      { text: "broken hearts", isCorrect: false },
+      { text: "scars", isCorrect: false },
+      { text: "mistakes", isCorrect: false },
+    ],
+  },
+  {
+    artist: 'taylor',
+    question: "Which Taylor Swift song is about a love triangle?",
+    answers: [
+      { text: "betty", isCorrect: true },
+      { text: "Lover", isCorrect: false },
+      { text: "Style", isCorrect: false },
+      { text: "Red", isCorrect: false },
+    ],
+  },
+  {
+    artist: 'taylor',
+    question: "True or False: Taylor Swift wrote 'This Is What You Came For' for Calvin Harris.",
+    answers: [
+      { text: "True", isCorrect: true },
+      { text: "False", isCorrect: false },
+    ],
+  },
 
   // Sabrina Carpenter questions
   {
@@ -236,17 +340,17 @@ export const QUESTIONS = [
   },
   {
     artist: 'sabrina',
-    question: "Finish the lyric: 'You can't spell awesome without ___'",
+    question: "Which Sabrina Carpenter album features the song 'Paris'?",
     answers: [
-      { text: "me", isCorrect: true },
-      { text: "us", isCorrect: false },
-      { text: "love", isCorrect: false },
-      { text: "fun", isCorrect: false },
+      { text: "Singular: Act I", isCorrect: true },
+      { text: "Singular: Act II", isCorrect: false },
+      { text: "Evolution", isCorrect: false },
+      { text: "Eyes Wide Open", isCorrect: false },
     ],
   },
   {
     artist: 'sabrina',
-    question: "True or False: Sabrina released 'Skin' in 2021.",
+    question: "True or False: Sabrina's debut single was 'Can't Blame a Girl for Trying'.",
     answers: [
       { text: "True", isCorrect: true },
       { text: "False", isCorrect: false },
@@ -254,12 +358,22 @@ export const QUESTIONS = [
   },
   {
     artist: 'sabrina',
-    question: "Which Sabrina Carpenter album features the song 'Thumbs'?",
+    question: "Which song did Sabrina release in 2021 that addresses rumors and drama?",
     answers: [
-      { text: "Evolution", isCorrect: true },
-      { text: "Singular: Act I", isCorrect: false },
-      { text: "Singular: Act II", isCorrect: false },
-      { text: "Eyes Wide Open", isCorrect: false },
+      { text: "Skin", isCorrect: true },
+      { text: "Sue Me", isCorrect: false },
+      { text: "Thumbs", isCorrect: false },
+      { text: "Nonsense", isCorrect: false },
+    ],
+  },
+  {
+    artist: 'sabrina',
+    question: "Which Disney Channel show did Sabrina star in?",
+    answers: [
+      { text: "Girl Meets World", isCorrect: true },
+      { text: "Liv and Maddie", isCorrect: false },
+      { text: "Bizaardvark", isCorrect: false },
+      { text: "Jessie", isCorrect: false },
     ],
   },
   {
@@ -274,7 +388,65 @@ export const QUESTIONS = [
   },
   {
     artist: 'sabrina',
-    question: "True or False: Sabrina Carpenter opened for Taylor Swift on the Eras Tour.",
+    question: "Finish the lyric: 'I got a feeling that it's gonna be a ___ night'",
+    answers: [
+      { text: "good", isCorrect: true },
+      { text: "long", isCorrect: false },
+      { text: "crazy", isCorrect: false },
+      { text: "fun", isCorrect: false },
+    ],
+  },
+  {
+    artist: 'sabrina',
+    question: "Which Sabrina Carpenter song features the lyric 'I'm a sucker for the way that you move'?",
+    answers: [
+      { text: "Almost Love", isCorrect: true },
+      { text: "Sue Me", isCorrect: false },
+      { text: "Skin", isCorrect: false },
+      { text: "Thumbs", isCorrect: false },
+    ],
+  },
+  {
+    artist: 'sabrina',
+    question: "True or False: Sabrina's middle name is Ann.",
+    answers: [
+      { text: "False", isCorrect: true },
+      { text: "True", isCorrect: false },
+    ],
+  },
+  {
+    artist: 'sabrina',
+    question: "Which Sabrina Carpenter album features the song 'Alien'?",
+    answers: [
+      { text: "Singular: Act I", isCorrect: false },
+      { text: "Singular: Act II", isCorrect: true },
+      { text: "Evolution", isCorrect: false },
+      { text: "Eyes Wide Open", isCorrect: false },
+    ],
+  },
+  {
+    artist: 'sabrina',
+    question: "Finish the lyric: 'You can take my youth away, the soul of mine will never break as long as I ___'",
+    answers: [
+      { text: "wake up", isCorrect: true },
+      { text: "stand up", isCorrect: false },
+      { text: "dream", isCorrect: false },
+      { text: "sing", isCorrect: false },
+    ],
+  },
+  {
+    artist: 'sabrina',
+    question: "Which Sabrina Carpenter song is about not fitting in?",
+    answers: [
+      { text: "Thumbs", isCorrect: false },
+      { text: "Alien", isCorrect: false },
+      { text: "Sue Me", isCorrect: false },
+      { text: "Eyes Wide Open", isCorrect: true },
+    ],
+  },
+  {
+    artist: 'sabrina',
+    question: "True or False: Sabrina Carpenter was born in Pennsylvania.",
     answers: [
       { text: "True", isCorrect: true },
       { text: "False", isCorrect: false },
@@ -282,22 +454,40 @@ export const QUESTIONS = [
   },
   {
     artist: 'sabrina',
-    question: "Which Sabrina Carpenter song is about moving on from a breakup?",
+    question: "Which Sabrina Carpenter song features the lyric 'I hope we both feel the same'?",
     answers: [
-      { text: "Skin", isCorrect: true },
+      { text: "Paris", isCorrect: false },
       { text: "Sue Me", isCorrect: false },
+      { text: "Almost Love", isCorrect: false },
+      { text: "Skinny Dipping", isCorrect: true },
+    ],
+  },
+  {
+    artist: 'sabrina',
+    question: "Finish the lyric: 'If you want to, you can get to know me again, if you want to, you can ___'",
+    answers: [
+      { text: "try again", isCorrect: true },
+      { text: "call me", isCorrect: false },
+      { text: "leave", isCorrect: false },
+      { text: "stay", isCorrect: false },
+    ],
+  },
+  {
+    artist: 'sabrina',
+    question: "Which Sabrina Carpenter song is about standing up for yourself?",
+    answers: [
+      { text: "Sue Me", isCorrect: true },
+      { text: "Skin", isCorrect: false },
       { text: "Thumbs", isCorrect: false },
       { text: "Nonsense", isCorrect: false },
     ],
   },
   {
     artist: 'sabrina',
-    question: "Finish the lyric: 'I got a feeling that it's gonna be a ___ night'",
+    question: "True or False: Sabrina Carpenter has a sister named Sarah.",
     answers: [
-      { text: "good", isCorrect: true },
-      { text: "long", isCorrect: false },
-      { text: "crazy", isCorrect: false },
-      { text: "fun", isCorrect: false },
+      { text: "True", isCorrect: true },
+      { text: "False", isCorrect: false },
     ],
   },
 ]; 
