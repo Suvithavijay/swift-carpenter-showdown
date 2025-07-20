@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import { useParams } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import Confetti from 'react-confetti';
 import taylorImg from './assets/taylor.jpg';
 import sabrinaImg from './assets/sabrina.png';
 
@@ -57,8 +56,9 @@ const QUESTIONS = {
         answer: 'Blank Space',
       },
       {
-        type: 'fill',
+        type: 'multiple',
         question: 'Finish the lyric: "You belong with ___"',
+        options: ['me', 'her', 'him', 'us'],
         answer: 'me',
       },
       {
@@ -94,18 +94,21 @@ const QUESTIONS = {
     ],
     'finish-line': [
       {
-        type: 'fill',
+        type: 'multiple',
         question: 'Finish the line: "We are never ever getting back ___"',
+        options: ['together', 'again', 'soon', 'here'],
         answer: 'together',
       },
       {
-        type: 'fill',
+        type: 'multiple',
         question: 'Finish the line: "I knew you were ___ when you walked in"',
+        options: ['trouble', 'happy', 'sad', 'mine'],
         answer: 'trouble',
       },
       {
-        type: 'fill',
+        type: 'multiple',
         question: 'Finish the line: "Loving him was ___"',
+        options: ['red', 'blue', 'gold', 'fun'],
         answer: 'red',
       },
     ],
@@ -181,8 +184,9 @@ const QUESTIONS = {
         answer: 'Vicious',
       },
       {
-        type: 'fill',
+        type: 'multiple',
         question: 'Finish the lyric: "I’m so good at ___, I could do it with my eyes closed"',
+        options: ['goodbyes', 'lies', 'love', 'games'],
         answer: 'goodbyes',
       },
       {
@@ -218,18 +222,21 @@ const QUESTIONS = {
     ],
     'finish-line': [
       {
-        type: 'fill',
+        type: 'multiple',
         question: 'Finish the line: "You can’t spell awesome without ___"',
+        options: ['me', 'us', 'love', 'fun'],
         answer: 'me',
       },
       {
-        type: 'fill',
+        type: 'multiple',
         question: 'Finish the line: "I’m a little bit ___, a little bit reckless"',
+        options: ['lost', 'found', 'wild', 'shy'],
         answer: 'lost',
       },
       {
-        type: 'fill',
+        type: 'multiple',
         question: 'Finish the line: "I’m not your ___, I’m not your friend"',
+        options: ['baby', 'girl', 'boy', 'pal'],
         answer: 'baby',
       },
     ],
@@ -297,18 +304,21 @@ const QUESTIONS = {
     ],
     'finish-line': [
       {
-        type: 'fill',
+        type: 'multiple',
         question: 'Finish the line: "We are never ever getting back ___"',
+        options: ['together', 'again', 'soon', 'here'],
         answer: 'together',
       },
       {
-        type: 'fill',
+        type: 'multiple',
         question: 'Finish the line: "I’m not your ___, I’m not your friend"',
+        options: ['baby', 'girl', 'boy', 'pal'],
         answer: 'baby',
       },
       {
-        type: 'fill',
+        type: 'multiple',
         question: 'Finish the line: "Loving him was ___"',
+        options: ['red', 'blue', 'gold', 'fun'],
         answer: 'red',
       },
     ],
@@ -340,9 +350,9 @@ function getQuestions(mode, genre) {
 }
 
 const ARTIST_IMAGES = {
-  taylor: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=facearea&w=600&h=800&facepad=2&q=80', // Taylor Swift portrait
-  sabrina: 'https://static.wikia.nocookie.net/disney/images/2/2d/Sabrina_Carpenter_2022.png', // Sabrina Carpenter portrait
-  both: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=facearea&w=600&h=800&facepad=2&q=80', // fallback to Taylor for both
+  taylor: '', // No external image
+  sabrina: '', // No external image
+  both: '', // fallback to none
 };
 
 const ARTIST_BRIGHT_IMAGES = {
@@ -359,36 +369,50 @@ const TAYLOR_IMAGES = [
   '/images/ts/taylor-swift-pictures.jpg',
 ];
 
+// Add Sabrina images array
+const SABRINA_IMAGES = [
+  '/images/SC/bs-bst-hp-n1_000.jpg',
+  '/images/SC/bs-bst-hp-n1_001.jpg',
+  '/images/SC/bst-hp-n2-2025_005.jpg',
+  '/images/SC/prada-lipstick-ps_001.jpg',
+  '/images/SC/prada-lipstick-ps_002.jpg',
+];
+
 function SparkleOverlay() {
+  const sparkleIcons = ['✨', '💖', '⭐', '💫', '🌟', '🩷', '🩵', '💜', '💛', '💙', '💚'];
   const sparkleColors = [
-    'text-pink-300', 'text-pink-400', 'text-fuchsia-300', 'text-purple-300', 'text-purple-400', 'text-cyan-300', 'text-cyan-400', 'text-teal-300', 'text-teal-400', 'text-white/80'
+    'text-pink-300', 'text-pink-400', 'text-fuchsia-300', 'text-purple-300', 'text-purple-400', 'text-cyan-300', 'text-cyan-400', 'text-yellow-300', 'text-yellow-400', 'text-white/80'
   ];
   return (
-    <div className="pointer-events-none absolute inset-0 z-10">
-      {[...Array(36)].map((_, i) => {
+    <div className="pointer-events-none absolute inset-0 z-20">
+      {[...Array(48)].map((_, i) => {
         const color = sparkleColors[Math.floor(Math.random() * sparkleColors.length)];
+        const icon = sparkleIcons[Math.floor(Math.random() * sparkleIcons.length)];
         return (
           <motion.span
             key={i}
-            className={`absolute ${color} text-lg select-none`}
+            className={`absolute ${color} text-3xl md:text-4xl select-none`}
             style={{
               top: `${Math.random() * 100}%`,
               left: `${Math.random() * 100}%`,
-              filter: 'drop-shadow(0 0 8px #fff) drop-shadow(0 0 16px #f0f) drop-shadow(0 0 24px #0ff)'
+              filter: 'drop-shadow(0 0 12px #fff) drop-shadow(0 0 24px #f0f) drop-shadow(0 0 32px #0ff)'
             }}
             animate={{
               opacity: [0, 1, 0],
-              scale: [0.7, 1.3, 0.7],
+              scale: [0.7, 1.5, 0.7],
               rotate: [0, 180, 360],
+              color: [
+                '#f472b6', '#f0abfc', '#a78bfa', '#facc15', '#f472b6', '#f0abfc', '#a78bfa', '#facc15'
+              ],
             }}
             transition={{
-              duration: 2 + Math.random() * 2,
+              duration: 2.5 + Math.random() * 2.5,
               repeat: Infinity,
               delay: Math.random() * 2,
               ease: 'easeInOut',
             }}
           >
-            ✨
+            {icon}
           </motion.span>
         )
       })}
@@ -457,6 +481,18 @@ function getLeaderboardKey(mode, genre) {
   return `leaderboard_${mode}_${genre}`;
 }
 
+// Helper to get a shuffled, repeated array of images for the number of questions
+function getShuffledImages(images, num) {
+  let arr = [];
+  while (arr.length < num) arr = arr.concat(images);
+  // Shuffle
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr.slice(0, num);
+}
+
 export default function QuestionsPage() {
   const { mode, genre } = useParams();
   const questions = getQuestions(mode, genre);
@@ -520,7 +556,7 @@ export default function QuestionsPage() {
   function handleSelect(option) {
     setSelected(option);
     setShowAnswer(true);
-    if ((q.type === 'multiple' && option === q.answer) || (q.type === 'truefalse' && option === q.answer) || (q.type === 'fill' && option === q.answer)) {
+    if ((q.type === 'multiple' && option === q.answer) || (q.type === 'truefalse' && option === q.answer)) {
       setScore((s) => s + 1);
     }
   }
@@ -537,24 +573,16 @@ export default function QuestionsPage() {
     }
   }
 
-  // For Taylor, precompute a random order of background images for each question at quiz start
-  const [taylorBgOrder] = useState(() => {
-    if (mode !== 'taylor') return [];
-    // Shuffle and repeat images if fewer than questions
-    let arr = [...TAYLOR_IMAGES];
-    while (arr.length < questions.length) arr = arr.concat(TAYLOR_IMAGES);
-    // Shuffle
-    for (let i = arr.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [arr[i], arr[j]] = [arr[j], arr[i]];
-    }
-    return arr.slice(0, questions.length);
-  });
-  const taylorBg = mode === 'taylor' ? taylorBgOrder[current] : null;
+  // In QuestionsPage, use useMemo for bgOrder
+  const bgOrder = useMemo(() => {
+    if (mode === 'taylor') return getShuffledImages(TAYLOR_IMAGES, questions.length);
+    if (mode === 'sabrina') return getShuffledImages(SABRINA_IMAGES, questions.length);
+    return [];
+  }, [mode, questions.length]);
+  const bgImg = (mode === 'taylor' || mode === 'sabrina') ? bgOrder[current] : null;
 
   return (
     <div className="min-h-screen w-full flex flex-col md:flex-row items-center justify-center bg-gradient-to-br from-pink-400 via-pink-300 via-fuchsia-300 to-pink-200 text-gray-900 relative overflow-hidden font-['Quicksand'],['Comic Sans MS'],cursive">
-      {showConfetti && <Confetti width={window.innerWidth} height={window.innerHeight} numberOfPieces={300} recycle={false} gravity={0.3} />} 
       <SparkleOverlay />
       <ExtraGirlyOverlay />
       {/* Glam background blobs - more pink and hearts */}
@@ -566,25 +594,26 @@ export default function QuestionsPage() {
         <div className="absolute bottom-1/3 right-1/3 w-40 h-40 bg-fuchsia-300 opacity-50 rounded-full blur-2xl animate-pulse" />
         <div className="absolute top-1/2 left-1/2 w-[30rem] h-[30rem] bg-gradient-to-br from-pink-400 via-pink-200 to-fuchsia-400 opacity-50 rounded-full blur-3xl animate-pulse -translate-x-1/2 -translate-y-1/2" />
       </div>
-      {/* Large glam artist image as background, but not blurred and high contrast */}
-      {mode === 'taylor' && taylorBg && (
+      {/* Remove the <img> for the background and use a <div> with backgroundImage instead */}
+      <div
+        className="absolute inset-0 w-full h-full z-0 opacity-80 bg-center bg-cover"
+        style={{ backgroundImage: bgImg ? `url('${bgImg}')` : 'none', filter: 'brightness(1.05) saturate(1.2)' }}
+      />
+      {/* Add a dark overlay for readability over the background image for both Taylor and Sabrina */}
+      {(mode === 'taylor' && bgImg) || (mode === 'sabrina' && bgImg) ? (
+        <div className="absolute inset-0 z-10 bg-black/50 pointer-events-none" />
+      ) : null}
+      {((mode === 'taylor' && bgImg) || (mode === 'sabrina' && bgImg)) && (
+        <div className="absolute inset-0 z-15 bg-gradient-to-br from-pink-400 via-fuchsia-400 to-purple-400 opacity-30 pointer-events-none" />
+      )}
+      {ARTIST_BRIGHT_IMAGES[mode] && (
         <img
-          src={taylorBg}
-          alt="Taylor Swift"
-          className="absolute inset-0 w-full h-full object-cover z-0 opacity-80"
-          style={{ objectPosition: 'center', filter: 'brightness(1.05) saturate(1.2)' }}
+          src={ARTIST_BRIGHT_IMAGES[mode]}
+          alt={mode === 'taylor' ? 'Taylor Swift' : mode === 'sabrina' ? 'Sabrina Carpenter' : 'Taylor & Sabrina'}
+          className="block md:hidden w-full max-h-60 object-cover z-10 opacity-95 drop-shadow-2xl"
+          style={{ objectPosition: 'top center', filter: 'brightness(1.1) saturate(1.3)' }}
         />
       )}
-      {/* Add a dark overlay for readability over the background image */}
-      {mode === 'taylor' && taylorBg && (
-        <div className="absolute inset-0 z-10 bg-black/50" />
-      )}
-      <img
-        src={ARTIST_BRIGHT_IMAGES[mode]}
-        alt={mode === 'taylor' ? 'Taylor Swift' : mode === 'sabrina' ? 'Sabrina Carpenter' : 'Taylor & Sabrina'}
-        className="block md:hidden w-full max-h-60 object-cover z-10 opacity-95 drop-shadow-2xl"
-        style={{ objectPosition: 'top center', filter: 'brightness(1.1) saturate(1.3)' }}
-      />
       {/* Translucent overlay for readability */}
       <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-pink-100/60 to-pink-200/80 z-10" />
       {/* Progress bar */}
@@ -598,7 +627,7 @@ export default function QuestionsPage() {
       </div>
       {/* Main quiz content - always visible, no flicker */}
       <div className="relative z-20 flex flex-col items-center justify-center w-full md:w-1/2 px-4 py-8">
-        <div className="rounded-3xl p-2 bg-gradient-to-r from-pink-500 via-fuchsia-400 to-pink-300 shadow-2xl mb-6 w-full max-w-2xl animate-pulse">
+        <div className="rounded-3xl p-2 bg-gradient-to-r from-pink-500 via-fuchsia-400 to-pink-300 shadow-2xl mb-6 w-full max-w-2xl">
           <div className="bg-white/95 rounded-3xl px-8 py-10 w-full flex flex-col items-center shadow-xl" style={{background: 'rgba(255,255,255,0.95)'}}>
             <h2 className="text-5xl md:text-7xl font-extrabold mb-2 text-center drop-shadow-glow animate-pulse bg-gradient-to-r from-pink-500 via-fuchsia-400 to-pink-400 bg-clip-text text-transparent font-['Quicksand'],['Comic Sans MS'],cursive" style={{textShadow: '0 2px 8px #000, 0 1px 0 #fff'}}>
               {mode === 'taylor' && 'Taylor Swift'}
@@ -624,8 +653,7 @@ export default function QuestionsPage() {
                     {q.options.map((opt) => (
                       <button
                         key={opt}
-                        className={`py-5 px-8 rounded-2xl border-2 font-bold text-2xl transition-all w-full shadow-md bg-gradient-to-r from-pink-200 via-fuchsia-200 to-pink-100 text-pink-700 hover:from-pink-300 hover:to-fuchsia-300 border-pink-300/80 ${selected === opt ? (opt === q.answer ? 'bg-green-200 border-green-400 text-green-900' : 'bg-red-200 border-red-400 text-red-900') : ''}`}
-                        disabled={showAnswer}
+                        className={`py-5 px-8 rounded-2xl border-2 font-bold text-2xl w-full shadow-md bg-gradient-to-r from-pink-200 via-fuchsia-200 to-pink-100 text-pink-700 border-pink-300/80 ${selected === opt ? (opt === q.answer ? 'bg-green-200 border-green-400 text-green-900' : 'bg-red-200 border-red-400 text-red-900') : ''}`}
                         onClick={() => handleSelect(opt)}
                       >
                         {opt}
@@ -638,8 +666,7 @@ export default function QuestionsPage() {
                     {[true, false].map((opt) => (
                       <button
                         key={String(opt)}
-                        className={`py-5 px-12 rounded-2xl border-2 font-bold text-2xl transition-all shadow-md bg-gradient-to-r from-pink-200 via-fuchsia-200 to-pink-100 text-pink-700 hover:from-pink-300 hover:to-fuchsia-300 border-pink-300/80 ${selected === opt ? (opt === q.answer ? 'bg-green-200 border-green-400 text-green-900' : 'bg-red-200 border-red-400 text-red-900') : ''}`}
-                        disabled={showAnswer}
+                        className={`py-5 px-12 rounded-2xl border-2 font-bold text-2xl shadow-md bg-gradient-to-r from-pink-200 via-fuchsia-200 to-pink-100 text-pink-700 border-pink-300/80 ${selected === opt ? (opt === q.answer ? 'bg-green-200 border-green-400 text-green-900' : 'bg-red-200 border-red-400 text-red-900') : ''}`}
                         onClick={() => handleSelect(opt)}
                       >
                         {opt ? 'True' : 'False'}
