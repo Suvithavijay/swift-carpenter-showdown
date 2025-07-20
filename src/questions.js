@@ -20,10 +20,10 @@ export const QUESTIONS = [
   {
     question: "Finish the lyric: 'Cause shade never made anybody...'",
     answers: [
-      { text: "shine", isCorrect: true },
+      { text: "less gay", isCorrect: true },
+      { text: "shine", isCorrect: false },
       { text: "cry", isCorrect: false },
       { text: "smile", isCorrect: false },
-      { text: "run", isCorrect: false },
     ],
   },
   {
