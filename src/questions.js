@@ -2,7 +2,6 @@ export const QUESTIONS = [
   // Taylor Swift questions
   {
     artist: 'taylor',
-    type: 'mc',
     question: "Which Taylor Swift album features the song 'Lover'?",
     answers: [
       { text: "1989", isCorrect: false },
@@ -13,7 +12,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'taylor',
-    type: 'lyric',
     question: "Finish the lyric: 'Cause shade never made anybody...'",
     answers: [
       { text: "less gay", isCorrect: true },
@@ -24,7 +22,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'taylor',
-    type: 'who',
     question: "Who said: 'You drew stars around my scars'?",
     answers: [
       { text: "Taylor Swift", isCorrect: true },
@@ -35,7 +32,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'taylor',
-    type: 'mc',
     question: "Which Taylor Swift song contains the lyric 'I remember it all too well'?",
     answers: [
       { text: "All Too Well", isCorrect: true },
@@ -46,7 +42,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'taylor',
-    type: 'tf',
     question: "True or False: Taylor Swift has an album called 'Midnights'.",
     answers: [
       { text: "True", isCorrect: true },
@@ -55,7 +50,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'taylor',
-    type: 'mc',
     question: "Which Taylor Swift album won Album of the Year at the 2016 Grammys?",
     answers: [
       { text: "1989", isCorrect: true },
@@ -66,7 +60,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'taylor',
-    type: 'lyric',
     question: "Finish the lyric: 'We are never ever getting back ...'",
     answers: [
       { text: "together", isCorrect: true },
@@ -77,7 +70,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'taylor',
-    type: 'mc',
     question: "Which Taylor Swift song features the lyric 'Darling I'm a nightmare dressed like a daydream'?",
     answers: [
       { text: "Blank Space", isCorrect: true },
@@ -88,7 +80,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'taylor',
-    type: 'mc',
     question: "Which color is most associated with the 'Red' era?",
     answers: [
       { text: "Red", isCorrect: true },
@@ -99,7 +90,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'taylor',
-    type: 'tf',
     question: "True or False: The lyric 'I shake it off' is from the song 'Shake It Off'.",
     answers: [
       { text: "True", isCorrect: true },
@@ -108,7 +98,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'taylor',
-    type: 'mc',
     question: "Which Taylor Swift song is about her relationship with Jake Gyllenhaal?",
     answers: [
       { text: "All Too Well", isCorrect: true },
@@ -119,7 +108,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'taylor',
-    type: 'mc',
     question: "Which Taylor Swift album is known for its indie-folk sound?",
     answers: [
       { text: "folklore", isCorrect: true },
@@ -130,7 +118,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'taylor',
-    type: 'tf',
     question: "True or False: Taylor Swift's lucky number is 13.",
     answers: [
       { text: "True", isCorrect: true },
@@ -139,7 +126,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'taylor',
-    type: 'mc',
     question: "Which Taylor Swift song features Brendon Urie?",
     answers: [
       { text: "ME!", isCorrect: true },
@@ -150,7 +136,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'taylor',
-    type: 'lyric',
     question: "Finish the lyric: 'I knew you were trouble when you ___ in.'",
     answers: [
       { text: "walked", isCorrect: true },
@@ -161,7 +146,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'taylor',
-    type: 'mc',
     question: "Which Taylor Swift song is about a scarf?",
     answers: [
       { text: "All Too Well", isCorrect: true },
@@ -172,7 +156,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'taylor',
-    type: 'lyric',
     question: "Finish the lyric: 'You can't spell awesome without ___'",
     answers: [
       { text: "me", isCorrect: true },
@@ -183,7 +166,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'taylor',
-    type: 'mc',
     question: "Which Taylor Swift song features the lyric 'Romeo, take me somewhere we can be alone'?",
     answers: [
       { text: "Love Story", isCorrect: true },
@@ -194,7 +176,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'taylor',
-    type: 'tf',
     question: "True or False: Taylor Swift's first album was self-titled.",
     answers: [
       { text: "True", isCorrect: true },
@@ -203,7 +184,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'taylor',
-    type: 'mc',
     question: "Which Taylor Swift song is about a getaway car?",
     answers: [
       { text: "Getaway Car", isCorrect: true },
@@ -214,7 +194,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'taylor',
-    type: 'lyric',
     question: "Finish the lyric: 'I don't know about you, but I'm feeling ___'",
     answers: [
       { text: "22", isCorrect: true },
@@ -225,7 +204,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'taylor',
-    type: 'mc',
     question: "Which Taylor Swift album features the song 'Cardigan'?",
     answers: [
       { text: "folklore", isCorrect: true },
@@ -236,7 +214,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'taylor',
-    type: 'tf',
     question: "True or False: Taylor Swift has won 3 Album of the Year Grammys.",
     answers: [
       { text: "True", isCorrect: true },
@@ -245,7 +222,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'taylor',
-    type: 'mc',
     question: "Which Taylor Swift song features the lyric 'You call me up again just to break me like a promise'?",
     answers: [
       { text: "All Too Well", isCorrect: true },
@@ -256,7 +232,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'taylor',
-    type: 'lyric',
     question: "Finish the lyric: 'Band-aids don't fix ___'",
     answers: [
       { text: "bullet holes", isCorrect: true },
@@ -267,7 +242,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'taylor',
-    type: 'mc',
     question: "Which Taylor Swift song is about a love triangle?",
     answers: [
       { text: "betty", isCorrect: true },
@@ -278,7 +252,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'taylor',
-    type: 'tf',
     question: "True or False: Taylor Swift wrote 'This Is What You Came For' for Calvin Harris.",
     answers: [
       { text: "True", isCorrect: true },
@@ -289,7 +262,6 @@ export const QUESTIONS = [
   // Sabrina Carpenter questions
   {
     artist: 'sabrina',
-    type: 'mc',
     question: "Which Sabrina Carpenter single went viral on TikTok in 2023?",
     answers: [
       { text: "Nonsense", isCorrect: true },
@@ -300,7 +272,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'sabrina',
-    type: 'lyric',
     question: "Finish the lyric: 'I'm so good at ___, I could do it with my eyes closed'",
     answers: [
       { text: "goodbyes", isCorrect: true },
@@ -311,7 +282,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'sabrina',
-    type: 'mc',
     question: "Which Sabrina Carpenter song includes the lyric 'I'm not even half as pretty'?",
     answers: [
       { text: "Because I Liked a Boy", isCorrect: true },
@@ -322,7 +292,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'sabrina',
-    type: 'tf',
     question: "True or False: Sabrina Carpenter starred in the Disney Channel show 'Girl Meets World'.",
     answers: [
       { text: "True", isCorrect: true },
@@ -331,7 +300,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'sabrina',
-    type: 'mc',
     question: "Which album is the song 'Sue Me' from?",
     answers: [
       { text: "Singular: Act II", isCorrect: true },
@@ -342,7 +310,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'sabrina',
-    type: 'who',
     question: "Who said: 'I want to be remembered for the things I create'?",
     answers: [
       { text: "Sabrina Carpenter", isCorrect: true },
@@ -353,7 +320,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'sabrina',
-    type: 'mc',
     question: "Which Sabrina Carpenter song features the lyric 'I can love me better than you can'?",
     answers: [
       { text: "Feather", isCorrect: true },
@@ -364,7 +330,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'sabrina',
-    type: 'mc',
     question: "Which Sabrina Carpenter song is NOT by her?",
     answers: [
       { text: "Enchanted", isCorrect: true },
@@ -375,7 +340,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'sabrina',
-    type: 'mc',
     question: "Which Sabrina Carpenter album features the song 'Paris'?",
     answers: [
       { text: "Singular: Act I", isCorrect: true },
@@ -386,7 +350,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'sabrina',
-    type: 'tf',
     question: "True or False: Sabrina's debut single was 'Can't Blame a Girl for Trying'.",
     answers: [
       { text: "True", isCorrect: true },
@@ -395,7 +358,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'sabrina',
-    type: 'mc',
     question: "Which song did Sabrina release in 2021 that addresses rumors and drama?",
     answers: [
       { text: "Skin", isCorrect: true },
@@ -406,7 +368,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'sabrina',
-    type: 'mc',
     question: "Which Disney Channel show did Sabrina star in?",
     answers: [
       { text: "Girl Meets World", isCorrect: true },
@@ -417,7 +378,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'sabrina',
-    type: 'mc',
     question: "Which Sabrina Carpenter song features the lyric 'You got me feeling like a psycho'?",
     answers: [
       { text: "Vicious", isCorrect: true },
@@ -428,7 +388,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'sabrina',
-    type: 'lyric',
     question: "Finish the lyric: 'I got a feeling that it's gonna be a ___ night'",
     answers: [
       { text: "good", isCorrect: true },
@@ -439,7 +398,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'sabrina',
-    type: 'mc',
     question: "Which Sabrina Carpenter song features the lyric 'I'm a sucker for the way that you move'?",
     answers: [
       { text: "Almost Love", isCorrect: true },
@@ -450,7 +408,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'sabrina',
-    type: 'tf',
     question: "True or False: Sabrina's middle name is Ann.",
     answers: [
       { text: "False", isCorrect: true },
@@ -459,7 +416,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'sabrina',
-    type: 'mc',
     question: "Which Sabrina Carpenter album features the song 'Alien'?",
     answers: [
       { text: "Singular: Act I", isCorrect: false },
@@ -470,7 +426,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'sabrina',
-    type: 'lyric',
     question: "Finish the lyric: 'You can take my youth away, the soul of mine will never break as long as I ___'",
     answers: [
       { text: "wake up", isCorrect: true },
@@ -481,7 +436,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'sabrina',
-    type: 'mc',
     question: "Which Sabrina Carpenter song is about not fitting in?",
     answers: [
       { text: "Thumbs", isCorrect: false },
@@ -492,7 +446,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'sabrina',
-    type: 'tf',
     question: "True or False: Sabrina Carpenter was born in Pennsylvania.",
     answers: [
       { text: "True", isCorrect: true },
@@ -501,7 +454,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'sabrina',
-    type: 'mc',
     question: "Which Sabrina Carpenter song features the lyric 'I hope we both feel the same'?",
     answers: [
       { text: "Paris", isCorrect: false },
@@ -512,7 +464,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'sabrina',
-    type: 'lyric',
     question: "Finish the lyric: 'If you want to, you can get to know me again, if you want to, you can ___'",
     answers: [
       { text: "try again", isCorrect: true },
@@ -523,7 +474,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'sabrina',
-    type: 'mc',
     question: "Which Sabrina Carpenter song is about standing up for yourself?",
     answers: [
       { text: "Sue Me", isCorrect: true },
@@ -534,7 +484,6 @@ export const QUESTIONS = [
   },
   {
     artist: 'sabrina',
-    type: 'tf',
     question: "True or False: Sabrina Carpenter has a sister named Sarah.",
     answers: [
       { text: "True", isCorrect: true },
