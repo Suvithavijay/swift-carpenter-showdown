@@ -19,6 +19,7 @@ export const QUESTIONS = [
       { text: "cry", isCorrect: false },
       { text: "smile", isCorrect: false },
     ],
+    type: "finish the lyric"
   },
   {
     artist: 'taylor',
@@ -67,6 +68,7 @@ export const QUESTIONS = [
       { text: "soon", isCorrect: false },
       { text: "here", isCorrect: false },
     ],
+    type: "finish the lyric"
   },
   {
     artist: 'taylor',
@@ -98,27 +100,58 @@ export const QUESTIONS = [
   },
   {
     artist: 'taylor',
-    question: "Which Taylor Swift song is about her relationship with Jake Gyllenhaal?",
+    question: "Which Taylor Swift song features the lyric 'I'm the problem, it's me'?",
     answers: [
-      { text: "All Too Well", isCorrect: true },
-      { text: "Love Story", isCorrect: false },
-      { text: "Style", isCorrect: false },
-      { text: "Delicate", isCorrect: false },
+      { text: "Anti-Hero", isCorrect: true },
+      { text: "Midnight Rain", isCorrect: false },
+      { text: "Lavender Haze", isCorrect: false },
+      { text: "Snow On The Beach", isCorrect: false },
     ],
   },
   {
     artist: 'taylor',
-    question: "Which Taylor Swift album is known for its indie-folk sound?",
+    question: "Finish the lyric: 'I'm a nightmare dressed like a ...'",
     answers: [
-      { text: "folklore", isCorrect: true },
+      { text: "daydream", isCorrect: true },
+      { text: "princess", isCorrect: false },
+      { text: "queen", isCorrect: false },
+      { text: "angel", isCorrect: false },
+    ],
+    type: "finish the lyric"
+  },
+  {
+    artist: 'taylor',
+    question: "Which Taylor Swift song features the lyric 'It's me, hi, I'm the problem, it's me'?",
+    answers: [
+      { text: "Anti-Hero", isCorrect: true },
+      { text: "Midnight Rain", isCorrect: false },
+      { text: "Lavender Haze", isCorrect: false },
+      { text: "Snow On The Beach", isCorrect: false },
+    ],
+  },
+  {
+    artist: 'taylor',
+    question: "Who said: 'I'm the problem, it's me'?",
+    answers: [
+      { text: "Taylor Swift", isCorrect: true },
+      { text: "Sabrina Carpenter", isCorrect: false },
+      { text: "Selena Gomez", isCorrect: false },
+      { text: "Olivia Rodrigo", isCorrect: false },
+    ],
+  },
+  {
+    artist: 'taylor',
+    question: "Which Taylor Swift album features the song 'Cruel Summer'?",
+    answers: [
+      { text: "Lover", isCorrect: true },
       { text: "1989", isCorrect: false },
       { text: "Reputation", isCorrect: false },
-      { text: "Red", isCorrect: false },
+      { text: "Midnights", isCorrect: false },
     ],
   },
   {
     artist: 'taylor',
-    question: "True or False: Taylor Swift's lucky number is 13.",
+    question: "True or False: Taylor Swift has an album called 'Folklore'.",
     answers: [
       { text: "True", isCorrect: true },
       { text: "False", isCorrect: false },
@@ -126,95 +159,48 @@ export const QUESTIONS = [
   },
   {
     artist: 'taylor',
-    question: "Which Taylor Swift song features Brendon Urie?",
-    answers: [
-      { text: "ME!", isCorrect: true },
-      { text: "You Need To Calm Down", isCorrect: false },
-      { text: "Lover", isCorrect: false },
-      { text: "The Man", isCorrect: false },
-    ],
-  },
-  {
-    artist: 'taylor',
-    question: "Finish the lyric: 'I knew you were trouble when you ___ in.'",
-    answers: [
-      { text: "walked", isCorrect: true },
-      { text: "came", isCorrect: false },
-      { text: "called", isCorrect: false },
-      { text: "danced", isCorrect: false },
-    ],
-  },
-  {
-    artist: 'taylor',
-    question: "Which Taylor Swift song is about a scarf?",
-    answers: [
-      { text: "All Too Well", isCorrect: true },
-      { text: "Cardigan", isCorrect: false },
-      { text: "Style", isCorrect: false },
-      { text: "The Archer", isCorrect: false },
-    ],
-  },
-  {
-    artist: 'taylor',
-    question: "Finish the lyric: 'You can't spell awesome without ___'",
+    question: "Finish the lyric: 'I'm the problem, it's ...'",
     answers: [
       { text: "me", isCorrect: true },
+      { text: "you", isCorrect: false },
       { text: "us", isCorrect: false },
-      { text: "love", isCorrect: false },
-      { text: "fun", isCorrect: false },
+      { text: "them", isCorrect: false },
     ],
+    type: "finish the lyric"
   },
   {
     artist: 'taylor',
-    question: "Which Taylor Swift song features the lyric 'Romeo, take me somewhere we can be alone'?",
-    answers: [
-      { text: "Love Story", isCorrect: true },
-      { text: "You Belong With Me", isCorrect: false },
-      { text: "Enchanted", isCorrect: false },
-      { text: "Fifteen", isCorrect: false },
-    ],
-  },
-  {
-    artist: 'taylor',
-    question: "True or False: Taylor Swift's first album was self-titled.",
-    answers: [
-      { text: "True", isCorrect: true },
-      { text: "False", isCorrect: false },
-    ],
-  },
-  {
-    artist: 'taylor',
-    question: "Which Taylor Swift song is about a getaway car?",
-    answers: [
-      { text: "Getaway Car", isCorrect: true },
-      { text: "Style", isCorrect: false },
-      { text: "Delicate", isCorrect: false },
-      { text: "Wildest Dreams", isCorrect: false },
-    ],
-  },
-  {
-    artist: 'taylor',
-    question: "Finish the lyric: 'I don't know about you, but I'm feeling ___'",
+    question: "Which Taylor Swift song features the lyric 'We're happy, free, confused, and lonely at the same time'?",
     answers: [
       { text: "22", isCorrect: true },
-      { text: "23", isCorrect: false },
-      { text: "18", isCorrect: false },
-      { text: "32", isCorrect: false },
+      { text: "15", isCorrect: false },
+      { text: "25", isCorrect: false },
+      { text: "30", isCorrect: false },
     ],
   },
   {
     artist: 'taylor',
-    question: "Which Taylor Swift album features the song 'Cardigan'?",
+    question: "Who said: 'We're happy, free, confused, and lonely at the same time'?",
     answers: [
-      { text: "folklore", isCorrect: true },
-      { text: "evermore", isCorrect: false },
-      { text: "1989", isCorrect: false },
-      { text: "Red", isCorrect: false },
+      { text: "Taylor Swift", isCorrect: true },
+      { text: "Sabrina Carpenter", isCorrect: false },
+      { text: "Selena Gomez", isCorrect: false },
+      { text: "Olivia Rodrigo", isCorrect: false },
     ],
   },
   {
     artist: 'taylor',
-    question: "True or False: Taylor Swift has won 3 Album of the Year Grammys.",
+    question: "Which Taylor Swift album features the song 'Style'?",
+    answers: [
+      { text: "1989", isCorrect: true },
+      { text: "Red", isCorrect: false },
+      { text: "Reputation", isCorrect: false },
+      { text: "Lover", isCorrect: false },
+    ],
+  },
+  {
+    artist: 'taylor',
+    question: "True or False: Taylor Swift has an album called 'Evermore'.",
     answers: [
       { text: "True", isCorrect: true },
       { text: "False", isCorrect: false },
@@ -222,125 +208,19 @@ export const QUESTIONS = [
   },
   {
     artist: 'taylor',
-    question: "Which Taylor Swift song features the lyric 'You call me up again just to break me like a promise'?",
+    question: "Finish the lyric: 'We're happy, free, confused, and lonely at the same ...'",
     answers: [
-      { text: "All Too Well", isCorrect: true },
-      { text: "Back to December", isCorrect: false },
-      { text: "The Archer", isCorrect: false },
-      { text: "Lover", isCorrect: false },
+      { text: "time", isCorrect: true },
+      { text: "moment", isCorrect: false },
+      { text: "day", isCorrect: false },
+      { text: "night", isCorrect: false },
     ],
+    type: "finish the lyric"
   },
-  {
-    artist: 'taylor',
-    question: "Finish the lyric: 'Band-aids don't fix ___'",
-    answers: [
-      { text: "bullet holes", isCorrect: true },
-      { text: "broken hearts", isCorrect: false },
-      { text: "scars", isCorrect: false },
-      { text: "mistakes", isCorrect: false },
-    ],
-  },
-  {
-    artist: 'taylor',
-    question: "Which Taylor Swift song is about a love triangle?",
-    answers: [
-      { text: "betty", isCorrect: true },
-      { text: "Lover", isCorrect: false },
-      { text: "Style", isCorrect: false },
-      { text: "Red", isCorrect: false },
-    ],
-  },
-  {
-    artist: 'taylor',
-    question: "True or False: Taylor Swift wrote 'This Is What You Came For' for Calvin Harris.",
-    answers: [
-      { text: "True", isCorrect: true },
-      { text: "False", isCorrect: false },
-    ],
-  },
-
   // Sabrina Carpenter questions
   {
     artist: 'sabrina',
-    question: "Which Sabrina Carpenter single went viral on TikTok in 2023?",
-    answers: [
-      { text: "Nonsense", isCorrect: true },
-      { text: "Sue Me", isCorrect: false },
-      { text: "Thumbs", isCorrect: false },
-      { text: "Skin", isCorrect: false },
-    ],
-  },
-  {
-    artist: 'sabrina',
-    question: "Finish the lyric: 'I'm so good at ___, I could do it with my eyes closed'",
-    answers: [
-      { text: "goodbyes", isCorrect: true },
-      { text: "lies", isCorrect: false },
-      { text: "love", isCorrect: false },
-      { text: "games", isCorrect: false },
-    ],
-  },
-  {
-    artist: 'sabrina',
-    question: "Which Sabrina Carpenter song includes the lyric 'I'm not even half as pretty'?",
-    answers: [
-      { text: "Because I Liked a Boy", isCorrect: true },
-      { text: "Skinny Dipping", isCorrect: false },
-      { text: "Sue Me", isCorrect: false },
-      { text: "Thumbs", isCorrect: false },
-    ],
-  },
-  {
-    artist: 'sabrina',
-    question: "True or False: Sabrina Carpenter starred in the Disney Channel show 'Girl Meets World'.",
-    answers: [
-      { text: "True", isCorrect: true },
-      { text: "False", isCorrect: false },
-    ],
-  },
-  {
-    artist: 'sabrina',
-    question: "Which album is the song 'Sue Me' from?",
-    answers: [
-      { text: "Singular: Act II", isCorrect: true },
-      { text: "Singular: Act I", isCorrect: false },
-      { text: "Eyes Wide Open", isCorrect: false },
-      { text: "Evolution", isCorrect: false },
-    ],
-  },
-  {
-    artist: 'sabrina',
-    question: "Who said: 'I want to be remembered for the things I create'?",
-    answers: [
-      { text: "Sabrina Carpenter", isCorrect: true },
-      { text: "Taylor Swift", isCorrect: false },
-      { text: "Selena Gomez", isCorrect: false },
-      { text: "Billie Eilish", isCorrect: false },
-    ],
-  },
-  {
-    artist: 'sabrina',
-    question: "Which Sabrina Carpenter song features the lyric 'I can love me better than you can'?",
-    answers: [
-      { text: "Feather", isCorrect: true },
-      { text: "Nonsense", isCorrect: false },
-      { text: "Because I Liked a Boy", isCorrect: false },
-      { text: "Vicious", isCorrect: false },
-    ],
-  },
-  {
-    artist: 'sabrina',
-    question: "Which Sabrina Carpenter song is NOT by her?",
-    answers: [
-      { text: "Enchanted", isCorrect: true },
-      { text: "Thumbs", isCorrect: false },
-      { text: "Eyes Wide Open", isCorrect: false },
-      { text: "Sue Me", isCorrect: false },
-    ],
-  },
-  {
-    artist: 'sabrina',
-    question: "Which Sabrina Carpenter album features the song 'Paris'?",
+    question: "Which Sabrina Carpenter album features the song 'Sue Me'?",
     answers: [
       { text: "Singular: Act I", isCorrect: true },
       { text: "Singular: Act II", isCorrect: false },
@@ -350,51 +230,14 @@ export const QUESTIONS = [
   },
   {
     artist: 'sabrina',
-    question: "True or False: Sabrina's debut single was 'Can't Blame a Girl for Trying'.",
+    question: "Finish the lyric: 'You can take my youth away, the soul of mine will never break as long as I ___'",
     answers: [
-      { text: "True", isCorrect: true },
-      { text: "False", isCorrect: false },
+      { text: "wake up", isCorrect: true },
+      { text: "stand up", isCorrect: false },
+      { text: "dream", isCorrect: false },
+      { text: "sing", isCorrect: false },
     ],
-  },
-  {
-    artist: 'sabrina',
-    question: "Which song did Sabrina release in 2021 that addresses rumors and drama?",
-    answers: [
-      { text: "Skin", isCorrect: true },
-      { text: "Sue Me", isCorrect: false },
-      { text: "Thumbs", isCorrect: false },
-      { text: "Nonsense", isCorrect: false },
-    ],
-  },
-  {
-    artist: 'sabrina',
-    question: "Which Disney Channel show did Sabrina star in?",
-    answers: [
-      { text: "Girl Meets World", isCorrect: true },
-      { text: "Liv and Maddie", isCorrect: false },
-      { text: "Bizaardvark", isCorrect: false },
-      { text: "Jessie", isCorrect: false },
-    ],
-  },
-  {
-    artist: 'sabrina',
-    question: "Which Sabrina Carpenter song features the lyric 'You got me feeling like a psycho'?",
-    answers: [
-      { text: "Vicious", isCorrect: true },
-      { text: "Feather", isCorrect: false },
-      { text: "Skin", isCorrect: false },
-      { text: "Sue Me", isCorrect: false },
-    ],
-  },
-  {
-    artist: 'sabrina',
-    question: "Finish the lyric: 'I got a feeling that it's gonna be a ___ night'",
-    answers: [
-      { text: "good", isCorrect: true },
-      { text: "long", isCorrect: false },
-      { text: "crazy", isCorrect: false },
-      { text: "fun", isCorrect: false },
-    ],
+    type: "finish the lyric"
   },
   {
     artist: 'sabrina',
@@ -422,16 +265,6 @@ export const QUESTIONS = [
       { text: "Singular: Act II", isCorrect: true },
       { text: "Evolution", isCorrect: false },
       { text: "Eyes Wide Open", isCorrect: false },
-    ],
-  },
-  {
-    artist: 'sabrina',
-    question: "Finish the lyric: 'You can take my youth away, the soul of mine will never break as long as I ___'",
-    answers: [
-      { text: "wake up", isCorrect: true },
-      { text: "stand up", isCorrect: false },
-      { text: "dream", isCorrect: false },
-      { text: "sing", isCorrect: false },
     ],
   },
   {
@@ -471,6 +304,7 @@ export const QUESTIONS = [
       { text: "leave", isCorrect: false },
       { text: "stay", isCorrect: false },
     ],
+    type: "finish the lyric"
   },
   {
     artist: 'sabrina',
@@ -489,5 +323,113 @@ export const QUESTIONS = [
       { text: "True", isCorrect: true },
       { text: "False", isCorrect: false },
     ],
+  },
+  {
+    artist: 'sabrina',
+    question: "Which Sabrina Carpenter song features the lyric 'I'm not a princess, I'm a queen'?",
+    answers: [
+      { text: "Paris", isCorrect: true },
+      { text: "Sue Me", isCorrect: false },
+      { text: "Almost Love", isCorrect: false },
+      { text: "Skin", isCorrect: false },
+    ],
+  },
+  {
+    artist: 'sabrina',
+    question: "Which Sabrina Carpenter song features the lyric 'I'm not a princess, I'm a queen'?",
+    answers: [
+      { text: "Paris", isCorrect: true },
+      { text: "Sue Me", isCorrect: false },
+      { text: "Almost Love", isCorrect: false },
+      { text: "Skin", isCorrect: false },
+    ],
+  },
+  {
+    artist: 'sabrina',
+    question: "Who said: 'I'm not a princess, I'm a queen'?",
+    answers: [
+      { text: "Sabrina Carpenter", isCorrect: true },
+      { text: "Taylor Swift", isCorrect: false },
+      { text: "Selena Gomez", isCorrect: false },
+      { text: "Olivia Rodrigo", isCorrect: false },
+    ],
+  },
+  {
+    artist: 'sabrina',
+    question: "Which Sabrina Carpenter album features the song 'Paris'?",
+    answers: [
+      { text: "Singular: Act I", isCorrect: true },
+      { text: "Singular: Act II", isCorrect: false },
+      { text: "Evolution", isCorrect: false },
+      { text: "Eyes Wide Open", isCorrect: false },
+    ],
+  },
+  {
+    artist: 'sabrina',
+    question: "True or False: Sabrina Carpenter has an album called 'Evolution'.",
+    answers: [
+      { text: "True", isCorrect: true },
+      { text: "False", isCorrect: false },
+    ],
+  },
+  {
+    artist: 'sabrina',
+    question: "Finish the lyric: 'I'm not a princess, I'm a ...'",
+    answers: [
+      { text: "queen", isCorrect: true },
+      { text: "star", isCorrect: false },
+      { text: "goddess", isCorrect: false },
+      { text: "diva", isCorrect: false },
+    ],
+    type: "finish the lyric"
+  },
+  {
+    artist: 'sabrina',
+    question: "Which Sabrina Carpenter song features the lyric 'I'm a sucker for the way that you move'?",
+    answers: [
+      { text: "Almost Love", isCorrect: true },
+      { text: "Sue Me", isCorrect: false },
+      { text: "Skin", isCorrect: false },
+      { text: "Thumbs", isCorrect: false },
+    ],
+  },
+  {
+    artist: 'sabrina',
+    question: "Who said: 'I'm a sucker for the way that you move'?",
+    answers: [
+      { text: "Sabrina Carpenter", isCorrect: true },
+      { text: "Taylor Swift", isCorrect: false },
+      { text: "Selena Gomez", isCorrect: false },
+      { text: "Olivia Rodrigo", isCorrect: false },
+    ],
+  },
+  {
+    artist: 'sabrina',
+    question: "Which Sabrina Carpenter album features the song 'Thumbs'?",
+    answers: [
+      { text: "Singular: Act I", isCorrect: true },
+      { text: "Singular: Act II", isCorrect: false },
+      { text: "Evolution", isCorrect: false },
+      { text: "Eyes Wide Open", isCorrect: false },
+    ],
+  },
+  {
+    artist: 'sabrina',
+    question: "True or False: Sabrina Carpenter has an album called 'Eyes Wide Open'.",
+    answers: [
+      { text: "True", isCorrect: true },
+      { text: "False", isCorrect: false },
+    ],
+  },
+  {
+    artist: 'sabrina',
+    question: "Finish the lyric: 'I'm a sucker for the way that you ...'",
+    answers: [
+      { text: "move", isCorrect: true },
+      { text: "dance", isCorrect: false },
+      { text: "sing", isCorrect: false },
+      { text: "smile", isCorrect: false },
+    ],
+    type: "finish the lyric"
   },
 ]; 
