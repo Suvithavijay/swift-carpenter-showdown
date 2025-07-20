@@ -19,6 +19,15 @@ const SABRINA_IMAGES = [
 
 const TIMER_SECONDS = 15;
 
+function getRandomUnique(arr, n) {
+  const copy = [...arr];
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy.slice(0, n);
+}
+
 const QuestionsPage = () => {
   const { mode } = useParams();
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -30,6 +39,12 @@ const QuestionsPage = () => {
   const [playerName, setPlayerName] = useState('');
   const [showNamePrompt, setShowNamePrompt] = useState(true);
   const [leaderboard, setLeaderboard] = useState([]);
+  const [roundQuestions, setRoundQuestions] = useState([]);
+
+  // On mount, select 5 unique random questions for this round
+  useEffect(() => {
+    setRoundQuestions(getRandomUnique(QUESTIONS, 5));
+  }, []);
 
   // Memoize background image order for the session
   const bgOrder = useMemo(() => {
@@ -46,7 +61,7 @@ const QuestionsPage = () => {
   }, [mode]);
   const bgImg = bgOrder[currentQuestion % bgOrder.length];
 
-  const currentQuestionData = QUESTIONS[currentQuestion];
+  const currentQuestionData = roundQuestions[currentQuestion];
 
   useEffect(() => {
     if (!showResult && timer > 0) {
@@ -97,44 +112,45 @@ const QuestionsPage = () => {
   };
 
   // Show summary page at the end
-  if (currentQuestion >= QUESTIONS.length) {
+  if (currentQuestion >= 5) {
     let badge = '';
-    if (score === QUESTIONS.length) {
+    if (score === 5) {
       badge = "🏆 Perfect! You're a Pop Superstar!";
-    } else if (score >= QUESTIONS.length * 0.7) {
+    } else if (score >= 4) {
       badge = "🎉 Great job! You're a Chart Climber!";
-    } else if (score >= QUESTIONS.length * 0.4) {
+    } else if (score >= 2) {
       badge = "✨ Not bad! Keep practicing!";
     } else {
       badge = "💪 Give it another try!";
     }
     return (
-      <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-        <div className="bg-white p-8 rounded-lg shadow-xl max-w-2xl w-full">
-          <h2 className="text-3xl font-bold mb-6 text-center text-gray-900">Quiz Summary</h2>
-          <ul className="space-y-4">
+      <div className="min-h-screen flex items-center justify-center font-['Quicksand'],['Comic Sans MS'],cursive" style={{ backgroundImage: `url('${bgImg}')`, backgroundSize: 'cover', backgroundPosition: 'center', border: '5px solid red', color: '#fff' }}>
+        <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.45)', zIndex: 0 }} />
+        <div className="p-8 rounded-lg shadow-xl max-w-md w-full" style={{ background: 'rgba(0,0,0,0.6)', color: '#fff', position: 'relative', zIndex: 1 }}>
+          <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '1.5rem', textAlign: 'center' }}>Quiz Summary</h2>
+          <ul style={{ marginBottom: '2rem' }}>
             {userAnswers.map((ans, idx) => (
-              <li key={idx} className="p-4 rounded-lg border border-gray-300 bg-gray-50">
-                <div className="font-semibold mb-2 text-gray-900">{ans.question}</div>
+              <li key={idx} style={{ padding: '1rem', borderRadius: '0.5rem', border: '1px solid #fff', background: 'rgba(255,255,255,0.08)', marginBottom: '1rem', color: '#fff' }}>
+                <div style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>{ans.question}</div>
                 <div>
-                  <span className="text-gray-800">Your answer: </span>
-                  <span className={ans.isCorrect ? "text-green-700 font-bold" : "text-red-700 font-bold"}>
-                    {ans.selected === 'No answer' ? <span className="italic text-gray-500">No answer selected</span> : ans.selected}
+                  <span>Your answer: </span>
+                  <span style={{ fontWeight: 'bold', color: ans.isCorrect ? '#7fffd4' : '#ffbaba' }}>
+                    {ans.selected === 'No answer' ? <span style={{ fontStyle: 'italic', color: '#ccc' }}>No answer selected</span> : ans.selected}
                   </span>
                 </div>
                 {!ans.isCorrect && (
                   <div>
-                    <span className="text-gray-800">Correct answer: </span>
-                    <span className="text-green-700 font-bold">{ans.correct}</span>
+                    <span>Correct answer: </span>
+                    <span style={{ fontWeight: 'bold', color: '#7fffd4' }}>{ans.correct}</span>
                   </div>
                 )}
               </li>
             ))}
           </ul>
-          <div className="mt-8 text-xl font-bold text-center text-gray-900">
-            Score: {score} / {QUESTIONS.length}
+          <div style={{ fontSize: '1.25rem', fontWeight: 'bold', textAlign: 'center', marginBottom: '1rem' }}>
+            Score: {score} / 5
           </div>
-          <div className="mt-4 text-lg font-bold text-center text-gray-900">
+          <div style={{ fontSize: '1.1rem', fontWeight: 'bold', textAlign: 'center', marginBottom: '1rem' }}>
             {badge}
           </div>
           {showNamePrompt && (
@@ -144,26 +160,26 @@ const QuestionsPage = () => {
                 saveScore(playerName, score);
                 setShowNamePrompt(false);
               }}
-              className="mt-6 flex flex-col items-center"
+              style={{ marginTop: '1.5rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
             >
               <input
-                className="border p-2 rounded mb-2"
+                style={{ border: '1px solid #fff', padding: '0.5rem', borderRadius: '0.5rem', marginBottom: '0.5rem', background: 'rgba(255,255,255,0.15)', color: '#fff' }}
                 placeholder="Enter your name"
                 value={playerName}
                 onChange={e => setPlayerName(e.target.value)}
                 required
               />
-              <button className="bg-blue-500 text-white px-4 py-2 rounded" type="submit">
+              <button style={{ background: '#fff', color: '#222', padding: '0.5rem 1.5rem', borderRadius: '0.5rem', fontWeight: 'bold' }} type="submit">
                 Save Score
               </button>
             </form>
           )}
           {!showNamePrompt && (
-            <div className="mt-8">
-              <h3 className="text-2xl font-bold mb-2">🏆 Leaderboard</h3>
+            <div style={{ marginTop: '2rem' }}>
+              <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>🏆 Leaderboard</h3>
               <ul>
                 {leaderboard.map((entry, idx) => (
-                  <li key={idx} className="mb-1">
+                  <li key={idx} style={{ marginBottom: '0.5rem' }}>
                     {idx + 1}. {entry.name} — {entry.score}
                   </li>
                 ))}
@@ -178,20 +194,34 @@ const QuestionsPage = () => {
   if (!currentQuestionData) return null;
 
   return (
-    <div className="min-h-screen flex items-center justify-center font-['Quicksand'],['Comic Sans MS'],cursive" style={{ backgroundImage: `url('${bgImg}')`, backgroundSize: 'cover', backgroundPosition: 'center', border: '5px solid red' }}>
-      <div className="p-8 rounded-lg shadow-xl max-w-md w-full" style={{ background: 'rgba(255,255,255,0.6)' }}>
-        <div className="flex justify-between items-center mb-4">
-          <span className="text-lg font-bold">Question {currentQuestion + 1} / {QUESTIONS.length}</span>
-          <span className="text-lg font-bold text-blue-600">Score: {score}</span>
-          <span className="text-lg font-bold text-red-600">⏰ {timer}s</span>
+    <div
+      className="min-h-screen flex items-center justify-center font-['Quicksand'],['Comic Sans MS'],cursive"
+      style={{
+        backgroundImage: `url('${bgImg}')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        border: '5px solid red',
+        color: '#fff'
+      }}
+    >
+      {/* Dark overlay for contrast */}
+      <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.45)', zIndex: 0 }} />
+      <div
+        className="p-8 rounded-lg shadow-xl max-w-md w-full"
+        style={{ background: 'rgba(0,0,0,0.6)', color: '#fff', position: 'relative', zIndex: 1 }}
+      >
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+          <span style={{ fontWeight: 'bold' }}>Question {currentQuestion + 1} / 5</span>
+          <span style={{ fontWeight: 'bold' }}>Score: {score}</span>
+          <span style={{ fontWeight: 'bold' }}>⏰ {timer}s</span>
         </div>
-        <h1 className="text-4xl font-bold text-center mb-4">{currentQuestionData.question}</h1>
-        <div className="grid gap-4">
+        <h1 style={{ fontSize: '2rem', fontWeight: 'bold', textAlign: 'center', marginBottom: '1rem' }}>{currentQuestionData.question}</h1>
+        <div style={{ display: 'grid', gap: '1rem' }}>
           {currentQuestionData.answers.map((answer, index) => (
             <button
               key={index}
               onClick={() => handleAnswerClick(answer)}
-              className="p-4 bg-blue-500 text-white rounded-lg text-lg font-semibold focus:outline-none"
+              style={{ padding: '1rem', background: '#fff', color: '#222', borderRadius: '0.5rem', fontWeight: 'bold', fontSize: '1.1rem', border: 'none', cursor: 'pointer', opacity: showResult ? 0.7 : 1 }}
               disabled={showResult}
             >
               {answer.text}
@@ -199,14 +229,14 @@ const QuestionsPage = () => {
           ))}
         </div>
         {showResult && (
-          <div className="mt-6 p-4 bg-green-100 text-green-800 rounded-lg text-lg font-semibold">
+          <div style={{ marginTop: '1.5rem', padding: '1rem', background: 'rgba(127,255,212,0.15)', color: selectedAnswer.isCorrect ? '#7fffd4' : '#ffbaba', borderRadius: '0.5rem', fontWeight: 'bold', fontSize: '1.1rem' }}>
             {selectedAnswer.isCorrect ? 'Correct!' : 'Incorrect!'}
           </div>
         )}
         {showResult && (
           <button
             onClick={handleNextQuestion}
-            className="mt-4 p-4 bg-blue-500 text-white rounded-lg text-lg font-semibold focus:outline-none"
+            style={{ marginTop: '1rem', padding: '1rem', background: '#fff', color: '#222', borderRadius: '0.5rem', fontWeight: 'bold', fontSize: '1.1rem', border: 'none', cursor: 'pointer' }}
           >
             Next Question
           </button>
