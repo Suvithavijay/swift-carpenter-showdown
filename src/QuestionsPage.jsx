@@ -243,18 +243,60 @@ const QuestionsPage = () => {
           </div>
         )}
         <h1 style={{ fontSize: '2rem', fontWeight: 'bold', textAlign: 'center', marginBottom: '1rem' }}>{currentQuestionData.question}</h1>
-        <div style={{ display: 'grid', gap: '1rem' }}>
-          {currentQuestionData.answers.map((answer, index) => (
+        {currentQuestionData.type === 'lyric' ? (
+          <form
+            onSubmit={e => {
+              e.preventDefault();
+              if (showResult || selectedAnswer) return;
+              const userInput = e.target.elements.lyricInput.value.trim().toLowerCase();
+              const correct = currentQuestionData.answers.find(a => a.isCorrect).text.trim().toLowerCase();
+              const isCorrect = userInput === correct;
+              setSelectedAnswer({ text: userInput, isCorrect });
+              setUserAnswers([
+                ...userAnswers,
+                {
+                  question: currentQuestionData.question,
+                  selected: userInput,
+                  correct: currentQuestionData.answers.find(a => a.isCorrect).text,
+                  isCorrect,
+                }
+              ]);
+              if (isCorrect) setScore(score + 1);
+              setShowResult(true);
+            }}
+            style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '1rem' }}
+          >
+            <input
+              name="lyricInput"
+              type="text"
+              autoComplete="off"
+              style={{ padding: '1rem', borderRadius: '0.5rem', fontSize: '1.1rem', border: '1px solid #fff', background: 'rgba(255,255,255,0.15)', color: '#fff' }}
+              placeholder="Type your answer..."
+              disabled={showResult}
+              required
+            />
             <button
-              key={index}
-              onClick={() => handleAnswerClick(answer)}
-              style={{ padding: '1rem', background: '#fff', color: '#222', borderRadius: '0.5rem', fontWeight: 'bold', fontSize: '1.1rem', border: 'none', cursor: 'pointer', opacity: showResult ? 0.7 : 1 }}
+              type="submit"
+              style={{ background: '#fff', color: '#222', padding: '0.5rem 1.5rem', borderRadius: '0.5rem', fontWeight: 'bold', fontSize: '1.1rem', border: 'none', cursor: 'pointer', opacity: showResult ? 0.7 : 1 }}
               disabled={showResult}
             >
-              {answer.text}
+              Submit
             </button>
-          ))}
-        </div>
+          </form>
+        ) : (
+          <div style={{ display: 'grid', gap: '1rem' }}>
+            {currentQuestionData.answers.map((answer, index) => (
+              <button
+                key={index}
+                onClick={() => handleAnswerClick(answer)}
+                style={{ padding: '1rem', background: '#fff', color: '#222', borderRadius: '0.5rem', fontWeight: 'bold', fontSize: '1.1rem', border: 'none', cursor: 'pointer', opacity: showResult ? 0.7 : 1 }}
+                disabled={showResult}
+              >
+                {answer.text}
+              </button>
+            ))}
+          </div>
+        )}
         {showResult && (
           <div style={{ marginTop: '1.5rem', padding: '1rem', background: 'rgba(127,255,212,0.15)', color: selectedAnswer.isCorrect ? '#7fffd4' : '#ffbaba', borderRadius: '0.5rem', fontWeight: 'bold', fontSize: '1.1rem' }}>
             {selectedAnswer.isCorrect ? 'Correct!' : 'Incorrect!'}
