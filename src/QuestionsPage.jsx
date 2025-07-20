@@ -226,6 +226,22 @@ const QuestionsPage = () => {
           <span style={{ fontWeight: 'bold' }}>Score: {score}</span>
           <span style={{ fontWeight: 'bold' }}>⏰ {timer}s</span>
         </div>
+        {currentQuestionData.type === 'lyric' && (
+          <div style={{
+            background: 'rgba(255,255,255,0.15)',
+            color: '#fff',
+            fontWeight: 'bold',
+            fontSize: '1.1rem',
+            borderRadius: '0.5rem',
+            padding: '0.5rem 1rem',
+            marginBottom: '1rem',
+            textAlign: 'center',
+            border: '2px solid #fff',
+            display: 'inline-block',
+          }}>
+            Finish the lyric
+          </div>
+        )}
         <h1 style={{ fontSize: '2rem', fontWeight: 'bold', textAlign: 'center', marginBottom: '1rem' }}>{currentQuestionData.question}</h1>
         <div style={{ display: 'grid', gap: '1rem' }}>
           {currentQuestionData.answers.map((answer, index) => (
