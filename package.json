@@ -1,12 +1,16 @@
 {
+<<<<<<< HEAD
   "name": "swift-carpenter-showdown",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+=======
+>>>>>>> 9d03b7b (feat: 5-question quiz with unique backgrounds per question, artist-specific logic, and expanded question pool)
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
+<<<<<<< HEAD
     "preview": "vite preview"
   },
   "dependencies": {
@@ -32,3 +36,10 @@
     "vite": "^7.0.4"
   }
 }
+=======
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  }
+} 
+>>>>>>> 9d03b7b (feat: 5-question quiz with unique backgrounds per question, artist-specific logic, and expanded question pool)
